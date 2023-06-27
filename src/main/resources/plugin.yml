@@ -1,0 +1,25 @@
+name: OGRegenBlocks
+version: '${project.version}'
+main: me.naphy.ogregenblocks.OGRegenBlocks
+api-version: '1.19'
+commands:
+  ogregenblocks:
+    description: Main command.
+  addregionregen:
+    description: AddRegionRegen command.
+  addsingularblockregen:
+    description: AddSingularBlockRegen command.
+  regioninfo:
+    description: RegionInfo command.
+  blockinfo:
+    description: BlockInfo command.
+  deleteregionregen:
+    description: DeleteRegionRegen command.
+  deleteblockregen:
+    description: DeleteBlockRegen command.
+  startaddingblocksregen:
+    description: StartAddingBlocksRegen command.
+  stopaddingblocksregen:
+    description: StopAddingBlocksRegen command.
+  test:
+    description: Test command.

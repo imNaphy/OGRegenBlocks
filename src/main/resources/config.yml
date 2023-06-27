@@ -1,0 +1,42 @@
+Enabled: false
+Singular blocks:
+  FirstEvent:
+    Enabled: true
+    Timer: 20
+    World: world
+    PosX: 0
+    PosY: 0
+    PosZ: 0
+    ItemsAdderBlock: alexandrite_ore
+  SecondEvent:
+    Enabled: true
+    Timer: 25
+    World: world
+    PosX: 1
+    PosY: 2
+    PosZ: 3
+    ItemsAdderBlock: alexandrite_ore
+
+Regions:
+  FirstEvent:
+    Enabled: true
+    Timer: 20
+    World: world
+    MinPosX: 0
+    MinPosY: 0
+    MinPosZ: 0
+    MaxPosX: 0
+    MaxPosY: 0
+    MaxPosZ: 0
+    ItemsAdderBlock: alexandrite_ore
+  SecondEvent:
+    Enabled: true
+    Timer: 25
+    World: world
+    MinPosX: 1
+    MinPosY: 1
+    MinPosZ: 1
+    MaxPosX: 1
+    MaxPosY: 1
+    MaxPosZ: 1
+    ItemsAdderBlock: alexandrite_ore
