@@ -1,20 +1,14 @@
 package me.naphy.ogregenblocks.Commands;
 
 import com.sk89q.worldedit.math.BlockVector3;
-import dev.lone.itemsadder.api.CustomBlock;
 import me.naphy.ogregenblocks.OGRegenBlocks;
 import me.naphy.ogregenblocks.RegionLoader;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class StopAddingBlocksRegen implements CommandExecutor {
 
@@ -40,18 +34,17 @@ public class StopAddingBlocksRegen implements CommandExecutor {
                     for (StartAddingBlocksRegen.CoordsInfo coords : editor.coords) {
                         RegionLoader.BlockInfo temp = new RegionLoader.BlockInfo();
                         String tempString = GenerateString(12);
-                        boolean test = true;
-                        boolean test2 = false;
-                        while (!test2) {
-                            test = true;
+                        boolean mainTest = false;
+                        while (!mainTest) {
+                            boolean secondTest = true;
                             for (String i : OGRegenBlocks.plugin.getConfig().getConfigurationSection("Singular blocks").getKeys(false)) {
                                 if (tempString.equals(i)) {
-                                    test = false;
+                                    secondTest = false;
                                     break;
                                 }
                             }
-                            if (test) {
-                                test2 = true;
+                            if (secondTest) {
+                                mainTest = true;
                             }
                             else {
                                 tempString = GenerateString(12);
@@ -80,8 +73,6 @@ public class StopAddingBlocksRegen implements CommandExecutor {
                     break;
                 }
             }
-            System.out.println(StartAddingBlocksRegen.editors);
-            System.out.println(StartAddingBlocksRegen.playerEditors);
         }
         return true;
     }

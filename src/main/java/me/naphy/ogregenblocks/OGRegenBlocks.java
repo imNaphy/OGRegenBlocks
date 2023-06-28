@@ -15,7 +15,6 @@ public final class OGRegenBlocks extends JavaPlugin {
         this.saveDefaultConfig();
         pluginSwitch = this.getConfig().getBoolean("Enabled");
         getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
-        getCommand("test").setExecutor(new test());
         getCommand("ogregenblocks").setExecutor(new Main());
         getCommand("addregionregen").setExecutor(new AddRegionRegen());
         getCommand("addsingularblockregen").setExecutor(new AddSingularBlockRegen());
@@ -25,8 +24,7 @@ public final class OGRegenBlocks extends JavaPlugin {
         getCommand("deleteblockregen").setExecutor(new DeleteBlockRegen());
         getCommand("startaddingblocksregen").setExecutor(new StartAddingBlocksRegen());
         getCommand("stopaddingblocksregen").setExecutor(new StopAddingBlocksRegen());
-
-        //getCommand("findblockid").setExecutor(new FindBlockId());
+        getCommand("findblockid").setExecutor(new FindBlockId());
         RegionLoader.init();
         Scheduler.start();
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&a[OGRegenBlocks] The plugin has been loaded!"));
@@ -34,6 +32,8 @@ public final class OGRegenBlocks extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        pluginSwitch = false;
+        Scheduler.stop();
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&c[OGRegenBlocks] The plugin has been unloaded!"));
     }
 }

@@ -70,8 +70,6 @@ public class StartAddingBlocksRegen implements CommandExecutor {
             editors.add(temp);
             playerEditors.add(sender.getName());
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b[OGRegenBlocks] &7You have now &asuccessfully &7entered the &bEasy Block Regen Adder&7! To place regen blocks, simply place the stone whenever you wish to have the block. When you're ready, just write &c/stopaddingblocksregen&7!"));
-            System.out.println(editors);
-            System.out.println(playerEditors);
         }
         return true;
     }
